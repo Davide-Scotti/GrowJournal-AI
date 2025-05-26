@@ -170,6 +170,7 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for d
 ## Contact
 
 **Lead Developer:** Davide Scotti — [scotti.17115@gmail.com](mailto:scotti.17115@gmail.com)
+
 **GitHub Issues:** Use this repo’s Issues tab for bug reports and feature requests.
 
 Let’s build the future of smart cultivation together! 🌱🤖
