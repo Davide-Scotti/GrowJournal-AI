@@ -1,74 +1,175 @@
 # GrowJournal AI
 
-> Smart Grow Journal web app with AI‑driven, personalized cultivation advice.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](#license)  
+> The ultimate AI-powered Grow Journal — from seed to harvest, personalized guidance at every step.
 
 ---
 
 ## 📖 Table of Contents
 
-1. [🚀 Project Overview](#-project-overview)  
-2. [✨ Key Features](#-key-features)  
-3. [🛠 Tech Stack & Architecture](#-tech-stack--architecture)  
-4. [⚙️ Installation & Setup](#️-installation--setup)  
-5. [📂 Project Structure](#-project-structure)  
-6. [🤝 Contributing](#-contributing)  
-7. [📄 License](#-license)  
-8. [👤 Contact & Support](#-contact--support)  
+1. [Overview](#overview)
+2. [Key Features](#key-features)
+3. [Technology Stack](#technology-stack)
+4. [Getting Started](#getting-started)
+5. [Project Structure](#project-structure)
+6. [API Endpoints](#api-endpoints)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
 ---
 
-## 🚀 Project Overview
+## Overview
 
-**GrowJournal AI** is a Progressive Web App (PWA) designed for cannabis cultivators of every level. It automates your grow journal, tracks every key event, and—powered by embedded AI—delivers timely, scientific cultivation advice tailored to your environment, strain and growth phase.
+**GrowJournal AI** is a Progressive Web App (PWA) designed for cannabis cultivators of all levels. It automates your grow journal, tracks every key event, and—powered by embedded AI—delivers timely, data-driven cultivation advice tailored to your strain, environment, and growth phase.
 
----
+## Key Features
 
-## ✨ Key Features
+*Automated Grow Logs*
+Record germination, transplant, irrigation, flowering, flush, and harvest events with dates, notes, and photos.
 
-- **Automated Grow Logs**  
-  Record germination, transplant, irrigation, flowering, flush, harvest—with date, notes and photos.  
-- **Smart Reminders & Notifications**  
-  Schedule custom alerts for watering, feeding, pruning, flush and more.  
-- **AI Grower Assistant**  
-  - **Rule‑based** advice for ideal temperature, pH, nutrient timing  
-  - **Machine Learning** suggestions from your historical grow data  
-  - **Computer Vision (future)** to diagnose leaf issues and mold from photos  
-- **Strain Database & Guides**  
-  In‑app reference for hundreds of strains: genetics, flowering time, typical yields, terpene profiles.  
-- **Interactive Dashboard**  
-  Visualize growth curves, EC/pH trends, and yield projections.  
-- **Export & Share**  
-  Generate PDF/CSV reports or publish a “grow diary” to your community.  
+*Smart Reminders & Notifications*
+Custom alerts for watering, feeding, pruning, pH checks, and more based on your personalized schedule.
 
----
+*AI Grower Assistant*
 
-## 🛠 Tech Stack & Architecture
+* Rule-based advice for temperature, pH, lighting, and nutrient management
+* Machine-learning suggestions derived from your historical grow data
+* Future vision: computer vision diagnostics for leaf health, nutrient deficiencies, and pests.
 
-### Frontend  
-- **Framework:** React (Create React App)  
-- **Styling:** Tailwind CSS  
-- **Routing & State:** react-router, React Context / Zustand  
-- **Forms & Validation:** react-hook-form  
+*Strain Database & Guides*
+In-app reference for hundreds of strains: genetics, flowering time, expected yield, terpene and cannabinoid profiles.
 
-### Backend  
-- **Runtime:** Node.js, Express  
-- **Database:** MongoDB (Mongoose)  
-- **Auth:** JWT (JSON Web Tokens)  
-- **AI/ML Services:** Python microservices (Flask / FastAPI) for predictive advice & image analysis  
+*Interactive Dashboard*
+Visualize growth curves, EC/pH trends, and yield projections in real time.
 
-### DevOps & Hosting  
-- **Frontend Hosting:** Vercel / Netlify  
-- **API Hosting:** Render / Heroku / AWS Elastic Beanstalk  
-- **CI/CD:** GitHub Actions  
-- **Containerization (future):** Docker  
+*Export & Share*
+Generate PDF/CSV reports or publish a public grow-diary for community feedback.
 
 ---
 
-## ⚙️ Installation & Setup
+## Technology Stack
 
-1. **Clone the repo**  
+### Frontend
+
+* React (Create React App)
+* Tailwind CSS
+* React Router
+* react-hook-form
+
+### Backend
+
+* Node.js, Express
+* MongoDB with Mongoose
+* JWT Authentication
+* Python (Flask/FastAPI) for AI microservices
+
+### DevOps & Hosting
+
+* Frontend: Vercel or Netlify
+* Backend: Render or Heroku
+* CI/CD: GitHub Actions
+* Containerization (future): Docker
+
+---
+
+## Getting Started
+
+1. **Clone the repository**
+
    ```bash
    git clone git@github.com:<your-org>/GrowJournal-AI.git
    cd GrowJournal-AI
+   ```
+2. **Install dependencies**
+
+   ```bash
+   # Frontend
+   cd web && npm install
+
+   # Backend
+   cd ../api && npm install
+   ```
+3. **Configure environment variables**
+   Create a `.env` file in both `/web` and `/api` directories with:
+
+   ```ini
+   MONGO_URI=your_mongo_connection_string
+   JWT_SECRET=your_jwt_secret
+   AI_SERVICE_URL=http://localhost:5000
+   ```
+4. **Run in development**
+
+   ```bash
+   # Backend
+   cd api && npm run dev
+
+   # Frontend
+   cd ../web && npm start
+   ```
+5. **Build for production**
+
+   ```bash
+   # Frontend
+   cd web && npm run build
+
+   # Backend
+   cd api && npm run build
+   ```
+
+---
+
+## Project Structure
+
+```
+GrowJournal-AI/
+├── web/    # React PWA client
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── api/
+│       └── utils/
+└── api/    # Node.js + Express server
+    ├── controllers/
+    ├── models/
+    ├── routes/
+    └── utils/
+```
+
+---
+
+## API Endpoints
+
+* `POST /api/users/register` — Register a new user
+* `POST /api/users/login` — Authenticate and receive a JWT
+* `GET  /api/growlogs` — List all grow logs for the authenticated user
+* `POST /api/growlogs` — Create a new grow log
+* `GET  /api/growlogs/:id` — Retrieve details of a specific grow log
+* `POST /api/growlogs/:id/events` — Add an event (e.g., watering, nutrient feed)
+* `GET  /api/advice/:id` — Fetch AI-driven cultivation advice for a grow log
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/YourFeatureName`
+3. Commit your changes with clear messages
+4. Push to your branch & open a pull request
+
+Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+## Contact
+
+**Lead Developer:** Your Name — [your.email@example.com](mailto:your.email@example.com)
+**GitHub Issues:** Use this repo’s Issues tab for bug reports and feature requests.
+
+Let’s build the future of smart cultivation together! 🌱🤖
