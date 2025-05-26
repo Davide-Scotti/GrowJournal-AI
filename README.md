@@ -77,7 +77,7 @@ Generate PDF/CSV reports or publish a public grow-diary for community feedback.
 1. **Clone the repository**
 
    ```bash
-   git clone git@github.com:<your-org>/GrowJournal-AI.git
+   git clone git@github.com:Davide-Scotti/GrowJournal-AI.git
    cd GrowJournal-AI
    ```
 2. **Install dependencies**
