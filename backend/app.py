@@ -13,4 +13,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(log_routes.router)
+# Includi il router dei log
+app.include_router(log_routes.router, prefix="/logs")

@@ -32,6 +32,10 @@ async def create_log(
     logs.append(entry)
     return {"message": "Log saved", "data": entry}
 
-@router.get("/log/")
-async def get_logs():
-    return logs
+@router.post("/log")
+def add_log(entry: dict):
+    return {"status": "ok", "log": entry}
+
+@router.get("/")
+def read_root():
+    return {"message": "GrowJournal API attiva!"}
